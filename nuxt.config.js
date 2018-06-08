@@ -1,3 +1,4 @@
+require('dotenv').config();
 const pkg = require('./package');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -43,6 +44,11 @@ module.exports = {
     methodOverride(),
     bodyParser.json(),
     cookieParser(),
+    session({
+      secret: process.env.SESSION_SECRET,
+      resave: false,
+      saveUninitialized: true
+    }),
     '@api'
   ],
 

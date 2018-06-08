@@ -2,6 +2,13 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
+});
+
 const app = express();
 app.use(passport.initialize());
 app.use(passport.session());
