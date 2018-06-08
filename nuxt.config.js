@@ -1,5 +1,8 @@
 const pkg = require('./package');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const methodOverride = require('method-override');
+const session = require('express-session');
 
 module.exports = {
   mode: 'universal',
@@ -37,7 +40,9 @@ module.exports = {
   ],
 
   serverMiddleware: [
+    methodOverride(),
     bodyParser.json(),
+    cookieParser(),
     '@api'
   ],
 

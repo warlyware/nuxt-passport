@@ -12,3 +12,5 @@ dist
 
 # nedb database data
 data
+
+.env

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { User } = require('../db');
 const router = require('./bootstrap');
 
